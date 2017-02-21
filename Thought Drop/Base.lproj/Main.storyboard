@@ -9,6 +9,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="cCD-Yd-aKy">
+            <objects>
+                <tableViewController id="Z6r-PM-z1O" customClass="ThoughtController" customModule="Thought_Drop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2QU-a1-dC4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Thoughts" id="XEe-mg-Xan">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XEe-mg-Xan" id="VZW-3Y-InN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z6r-PM-z1O" id="6Bg-sU-bf8"/>
+                            <outlet property="delegate" destination="Z6r-PM-z1O" id="IeF-i1-gMh"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="hBJ-vk-uVz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fga-iq-4Ob" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2070" y="54"/>
+        </scene>
         <!--Explore-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -21,12 +50,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AIN-UF-dms">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AIN-UF-dms">
                                 <rect key="frame" x="0.0" y="28" width="375" height="639"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AIN-UF-dms" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6oU-y8-tiJ"/>
+                            <constraint firstAttribute="trailing" secondItem="AIN-UF-dms" secondAttribute="trailing" id="Bv7-bs-mjo"/>
+                            <constraint firstAttribute="bottom" secondItem="AIN-UF-dms" secondAttribute="bottom" id="OFM-Jj-h1Q"/>
+                            <constraint firstItem="AIN-UF-dms" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="mx5-6g-ygt"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" id="eqE-9X-WYO" userLabel="Explore"/>
                     <navigationItem key="navigationItem" id="Lfy-Dy-Vs8"/>
@@ -36,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="488"/>
+            <point key="canvasLocation" x="2070" y="790"/>
         </scene>
         <!--Drop-->
         <scene sceneID="XYo-CA-g1u">
@@ -50,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text=". . ." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-JU-ilf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-JU-ilf">
                                 <rect key="frame" x="16" y="28" width="343" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nx-FB-3Bc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2048.8000000000002" y="1210.344827586207"/>
+            <point key="canvasLocation" x="2071" y="1578"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ab0-gf-pHg">
@@ -94,6 +128,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Tke-9b-dnk"/>
                         <segue destination="VcU-Mc-Jla" kind="relationship" relationship="viewControllers" id="AWm-G1-Uti"/>
+                        <segue destination="Z6r-PM-z1O" kind="relationship" relationship="viewControllers" id="dbF-d3-Lli"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vL1-H1-PSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
